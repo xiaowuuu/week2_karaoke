@@ -7,7 +7,7 @@ class Room:
         self.capacity = 10
 
     def check_in_guest(self, guest):
-        self.new_guest.append(guest)
+        self.new_guest.append(guest.name)
     
     def check_out_guest(self, guest):
         if guest in self.new_guest:
