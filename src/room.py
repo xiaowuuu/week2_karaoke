@@ -17,4 +17,8 @@ class Room:
         self.play_list.append(song.name)
 
     def room_capacity(self):
-        self.capacity -= len(self.new_guest)
+        left_space = self.capacity - len(self.new_guest)
+        if self.capacity > len(self.new_guest):
+            return (f"There has {left_space} left.")
+        else:
+            return (f"There's no space left.")

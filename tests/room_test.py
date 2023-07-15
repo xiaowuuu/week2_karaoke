@@ -26,4 +26,8 @@ class TestRoom(unittest.TestCase):
         self.room_1.add_songs(self.song)    
         self.assertEqual(["Makeba"], self.room_1.play_list)
 
-    
+    def test_room_capacity(self):
+        # 4 people in the room, one more wants to check in
+        self.room_1.new_guest = ["Ying", "Patrick", "Craig","Ying"]
+        self.room_1.check_in_guest(self.guest_2)
+        self.assertEqual("There has 5 left.", self.room_1.room_capacity())
